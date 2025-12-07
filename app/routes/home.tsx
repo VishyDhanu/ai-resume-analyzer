@@ -1,13 +1,24 @@
+import Navbar from "~/components/Navbar";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "AI Resume" },
+    { name: "description", content: "Ace your dream job!" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <main className="bg-gradient">
+      <Navbar />
+
+      <section className="main-section">
+        <div className="page-heading">
+          <h1>Stay Ahead with AI-Powered Tracking</h1>
+          <h2>AI-Powered Reviews Made Simple</h2>
+        </div>
+      </section>
+    </main>
+  );
 }

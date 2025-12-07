@@ -6,7 +6,7 @@
   --font-sans:
     "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-dark-200: #475467;
+  --color-dark-200: #280000;
   --color-light-blue-100: #c1d3f81a;
   --color-light-blue-200: #a7bff14d;
 
@@ -28,7 +28,7 @@ main {
   @apply min-h-screen pt-10;
 }
 h1 {
-  @apply max-sm:text-[3rem] text-6xl  text-gradient leading-tight xl:tracking-[-2px] font-semibold;
+  @apply max-sm:text-[3rem] text-6xl   leading-tight xl:tracking-[-2px] font-semibold;
 }
 
 h2 {
@@ -52,7 +52,7 @@ form {
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] to-[#000000];
   }
   .gradient-border {
     @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
@@ -118,7 +118,7 @@ form {
 }
 
 @utility bg-gradient {
-  background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
+  background: linear-gradient(30deg, #fcff9e 0%, #c67700 100%);
 }
 
 @utility text-gradient {
@@ -130,7 +130,18 @@ form {
 }
 
 @utility primary-gradient {
-  background: linear-gradient(to bottom, #8e98ff, #606beb);
+  background: #8e0e00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   box-shadow: 0px 74px 21px 0px #6678ef00;
 }
 
