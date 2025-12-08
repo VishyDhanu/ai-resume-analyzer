@@ -3,6 +3,10 @@ import type { Route } from "./+types/home";
 import { resumes } from "../constants";
 import ResumeCard from "~/components/ResumeCard";
 import { resume } from "react-dom/server";
+import Auth from "../routes/auth";
+import { usePuterStore } from "~/lib/puter";
+
+import { useLocation } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,10 +16,15 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const { isLoading, auth } = usePuterStore();
+  const location = useLocation();
+  const next = location.search.split("next=")[0];
+
   return (
     <main className="bg-gradient">
-      <Navbar />
-
+      <Auth />
+      {/* <Navbar />
+      {window.puter.ai.chat()}
       <section className="main-section">
         <div className="page-heading py-10">
           <h1>Stay Ahead with AI-Powered Tracking</h1>
@@ -29,7 +38,7 @@ export default function Home() {
             ))}
           </div>
         )}
-      </section>
+      </section> */}
     </main>
   );
 }
