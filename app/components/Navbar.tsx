@@ -7,7 +7,7 @@ const Navbar = () => {
       <Link to="/">
         <p className="text-2xl font-bold text-amber-950">Resume Analyzer</p>
       </Link>
-      <Link to="/upload" className="primary-button w-fit">
+      <Link to="/upload" className="primary-button w-fit no-wrap">
         Upload Resume
       </Link>
     </div>
